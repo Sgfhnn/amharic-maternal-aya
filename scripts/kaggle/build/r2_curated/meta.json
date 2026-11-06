@@ -1,0 +1,8 @@
+{
+ "id": "neimashube/amh-tinyaya-r2-curated",
+ "title": "amh-tinyaya-r2-curated",
+ "dataset_sources": [
+  "neimashube/amh-tinyaya-run2",
+  "neimashube/amh-tinyaya-curated-v2"
+ ]
+}

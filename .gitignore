@@ -1,0 +1,32 @@
+# weights and large artifacts (published on Hugging Face instead)
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.gguf
+*.ckpt
+**/adapter/
+**/ckpt/
+merged*/
+# datasets (on Hugging Face, licence-restricted)
+*.jsonl
+*.parquet
+*.xlsx
+*.csv
+data/raw/
+# secrets
+.env
+.env.*
+*.pem
+*.key
+kaggle.json
+**/hf_token*
+**/secrets*.json
+**/.secrets
+**/*token*.txt
+# python / tooling
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.cache/
+.venv/

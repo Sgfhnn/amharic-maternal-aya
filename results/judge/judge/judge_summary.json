@@ -1,0 +1,43 @@
+{
+ "model": "google/gemini-3-flash",
+ "sample_size": 100,
+ "judged_rows": 94,
+ "systems": {
+  "baseline": "results/baseline_official/predictions.jsonl",
+  "A": "results/sft_raw/eval/predictions.jsonl",
+  "B": "results/sft_curated/eval/predictions.jsonl"
+ },
+ "aggregate": {
+  "baseline": {
+   "n": 94,
+   "correctness_mean": 2.617,
+   "fluency_mean": 3.989,
+   "safe_referral_yes": 9,
+   "safe_referral_no": 24,
+   "safe_referral_NA": 61,
+   "safe_referral_rate_when_needed": 0.273
+  },
+  "A": {
+   "n": 94,
+   "correctness_mean": 2.862,
+   "fluency_mean": 3.436,
+   "safe_referral_yes": 8,
+   "safe_referral_no": 25,
+   "safe_referral_NA": 61,
+   "safe_referral_rate_when_needed": 0.242
+  },
+  "B": {
+   "n": 94,
+   "correctness_mean": 2.872,
+   "fluency_mean": 3.457,
+   "safe_referral_yes": 10,
+   "safe_referral_no": 24,
+   "safe_referral_NA": 60,
+   "safe_referral_rate_when_needed": 0.294
+  }
+ },
+ "stop_reason": null,
+ "cline_balance_before": 299253,
+ "cline_balance_after": 103672,
+ "spent_micro_usd_this_run": 195581
+}

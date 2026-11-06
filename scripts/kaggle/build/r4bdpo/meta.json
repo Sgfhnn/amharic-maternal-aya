@@ -1,0 +1,10 @@
+{
+ "id": "neimashube/amh-tinyaya-r4b-dpo",
+ "title": "amh-tinyaya-r4b-dpo",
+ "dataset_sources": [
+  "neimashube/amh-tinyaya-run3",
+  "neimashube/amh-tinyaya-r3dpo",
+  "neimashube/amh-tinyaya-r4bdpo",
+  "neimashube/amh-tinyaya-r4probe"
+ ]
+}

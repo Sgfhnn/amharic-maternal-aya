@@ -1,0 +1,34 @@
+{
+ "created": "2026-11-06T08:13:18.472034+00:00",
+ "pairs_train": 915,
+ "pairs_dev": 53,
+ "by_kind": {
+  "routine_rewrite": 113,
+  "minus_referral": 182,
+  "factual_answer": 112,
+  "original_mt_answer": 43,
+  "fluency_vs_mt": 321,
+  "anti_repetition": 197
+ },
+ "by_kind_care": {
+  "routine_rewrite/routine": 113,
+  "minus_referral/urgent": 182,
+  "factual_answer/routine": 112,
+  "original_mt_answer/urgent": 43,
+  "fluency_vs_mt/routine": 278,
+  "fluency_vs_mt/urgent": 43,
+  "anti_repetition/urgent": 90,
+  "anti_repetition/routine": 107
+ },
+ "referral_signal_pairs_by_care": {
+  "routine": 225,
+  "urgent": 225
+ },
+ "notes": {
+  "fluency_routine_chosen_stripped": 280,
+  "fluency_routine_rejected_stripped": 3,
+  "fluency_skipped_identical": 1,
+  "fluency_routine_skipped_ref_asym": 1,
+  "anti_skipped_long": 6
+ }
+}

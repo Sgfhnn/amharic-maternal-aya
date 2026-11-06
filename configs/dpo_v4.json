@@ -1,0 +1,101 @@
+{
+ "framework": "aligntune (TRL backend) DPO, low-mem attempt 1",
+ "hp": {
+  "epochs": 1,
+  "lr": 5e-05,
+  "beta": 0.1,
+  "loss": "sigmoid",
+  "max_grad_norm": 1.0,
+  "r": 16,
+  "alpha": 32,
+  "dropout": 0.05,
+  "max_len": 768,
+  "max_prompt_len": null,
+  "truncation": "keep_start",
+  "bs": 1,
+  "grad_acc": 16,
+  "precompute_ref_log_probs": true,
+  "gradient_checkpointing": true,
+  "max_memory": {
+   "0": 3670016000,
+   "1": 13958643712
+  },
+  "targets": [
+   "q_proj",
+   "k_proj",
+   "v_proj",
+   "o_proj",
+   "gate_proj",
+   "up_proj",
+   "down_proj"
+  ]
+ },
+ "final_dpo_args": {
+  "per_device_train_batch_size": 1,
+  "per_device_eval_batch_size": 1,
+  "gradient_accumulation_steps": 16,
+  "gradient_checkpointing": true,
+  "gradient_checkpointing_kwargs": {
+   "use_reentrant": false
+  },
+  "max_length": 768,
+  "truncation_mode": "keep_start",
+  "precompute_ref_log_probs": true,
+  "fp16": true,
+  "bf16": false,
+  "beta": 0.1,
+  "loss_type": [
+   "sigmoid"
+  ],
+  "learning_rate": 5e-05,
+  "num_train_epochs": 1,
+  "max_steps": -1,
+  "lr_scheduler_type": "linear",
+  "warmup_steps": 0.1,
+  "max_grad_norm": 1.0
+ },
+ "data": {
+  "train": {
+   "in": 425,
+   "kept": 425,
+   "dropped_identical_after_trunc": 0,
+   "chosen_truncated": 0,
+   "rejected_truncated": 1,
+   "prompt_tokens_max": 440
+  },
+  "val": {
+   "in": 25,
+   "kept": 25,
+   "dropped_identical_after_trunc": 0,
+   "chosen_truncated": 0,
+   "rejected_truncated": 1,
+   "prompt_tokens_max": 414
+  }
+ },
+ "model_dir": "/tmp/m3_v3sft",
+ "final_eval": {
+  "eval_loss": 0.20614196360111237,
+  "eval_runtime": 6.4533,
+  "eval_samples_per_second": 3.874,
+  "eval_steps_per_second": 3.874,
+  "eval_entropy": 1.3868612480163574,
+  "eval_num_tokens": 167445.0,
+  "eval_logits/chosen": -2.242108889147396,
+  "eval_logits/rejected": -2.261252445410151,
+  "eval_mean_token_accuracy": 0.6931211924552918,
+  "eval_rewards/chosen": 0.5896907456219196,
+  "eval_rewards/rejected": -1.2956158424913884,
+  "eval_rewards/accuracies": 1.0,
+  "eval_rewards/margins": 1.8853065872192383,
+  "eval_logps/chosen": -208.66059265136718,
+  "eval_logps/rejected": -238.27865844726563,
+  "epoch": 1.0
+ },
+ "nan_events": [],
+ "peak_mem_gib": {
+  "0": 7.86,
+  "1": 4.02
+ },
+ "train_seconds": 530.9202036857605,
+ "script": "train_dpo_lowmem.py"
+}

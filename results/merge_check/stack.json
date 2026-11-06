@@ -1,0 +1,13 @@
+{
+ "adapter_sha256": {
+  "r2_B": "d22f193e97125862956deeb5b7267428649103646adcf8015f541e2a7c5ed939",
+  "v3_sft": "703d946e9993369c07910a5efc6c3073ff8f8becaebe0778263c7b026cf60e77",
+  "v4c_dpo": "4605bd5720fa7db069c0c7cda056fac637332a0be01e8642bc0f3f1c8b78d599"
+ },
+ "stack": [
+  "CohereLabs/tiny-aya-earth",
+  "run-2 B",
+  "v3 SFT",
+  "v4c DPO"
+ ]
+}

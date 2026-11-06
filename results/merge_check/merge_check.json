@@ -1,0 +1,77 @@
+{
+ "rows": [
+  "test-00000-amhqa_mendeley-239",
+  "test-00001-amhqa_mendeley-1956",
+  "test-00002-amhqa_mendeley-1239",
+  "test-00003-amhqa_mendeley-208",
+  "test-00004-amhqa_mendeley-34",
+  "test-00005-amhqa_mendeley-848",
+  "test-00006-amhqa_mendeley-323",
+  "test-00007-amhqa_mendeley-1213",
+  "test-00008-amhqa_mendeley-1422",
+  "test-00009-amhqa_mendeley-1505",
+  "test-00010-amhqa_mendeley-130",
+  "test-00011-amhqa_mendeley-1257",
+  "test-00012-amhqa_mendeley-1369",
+  "test-00013-amhqa_mendeley-1435",
+  "test-00014-amhqa_mendeley-642",
+  "test-00015-amhqa_mendeley-1074"
+ ],
+ "merged_vs_stored": {
+  "exact": 13,
+  "n": 16,
+  "chrf_mean": 97.71,
+  "chrf_min": 75.36
+ },
+ "adapter_vs_stored": {
+  "exact": 13,
+  "n": 16,
+  "chrf_mean": 97.71,
+  "chrf_min": 75.36
+ },
+ "merged_vs_adapter": {
+  "exact": 16,
+  "n": 16,
+  "chrf_mean": 100.0,
+  "chrf_min": 100.0
+ },
+ "merged_vs_stored_divergence": {
+  "test-00004-amhqa_mendeley-34": {
+   "first_diff_char": 352,
+   "len_merged": 376,
+   "len_stored": 412
+  },
+  "test-00009-amhqa_mendeley-1505": {
+   "first_diff_char": 391,
+   "len_merged": 414,
+   "len_stored": 417
+  },
+  "test-00013-amhqa_mendeley-1435": {
+   "first_diff_char": 311,
+   "len_merged": 430,
+   "len_stored": 436
+  }
+ },
+ "merged_run_meta": {
+  "model": "/kaggle/working/merged_v4c",
+  "adapter": null,
+  "dtype": "torch.float16",
+  "decoding": "greedy",
+  "max_new_tokens": 256,
+  "torch": "2.11.0+cu130",
+  "gpu": "Tesla T4",
+  "transformers": "5.15.0",
+  "gen_seconds": 24.0
+ },
+ "adapter_run_meta": {
+  "model": "/tmp/m3_v3sft",
+  "adapter": "/tmp/dpo4c_adapter",
+  "dtype": "torch.float16",
+  "decoding": "greedy",
+  "max_new_tokens": 256,
+  "torch": "2.11.0+cu130",
+  "gpu": "Tesla T4",
+  "transformers": "5.15.0",
+  "gen_seconds": 22.0
+ }
+}

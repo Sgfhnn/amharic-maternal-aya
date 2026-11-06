@@ -1,0 +1,24 @@
+{
+ "decoding": "greedy",
+ "max_new_tokens": 256,
+ "chat_template": "stock Tiny Aya template, no extra system prompt",
+ "batch_size": 16,
+ "dtype": "float16",
+ "gpu": "Tesla T4",
+ "transformers": "5.15.0",
+ "test": "data/test.jsonl, 550 rows (400 AmHQA + 150 Walelign SRH)",
+ "mcq": {
+  "belebele": "facebook/belebele amh_Ethi, 900, zero-shot argmax A-D",
+  "afrimmlu": "masakhane/afrimmlu amh test, 500, zero-shot argmax A-D"
+ },
+ "judge": {
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash:deepinfra (HF Inference Providers)",
+  "sample": "results/judge_run3/sample_ids.json, 100 rows (60 Walelign + 40 AmHQA)"
+ },
+ "stack_v4c": [
+  "CohereLabs/tiny-aya-earth",
+  "run-2 B adapter",
+  "v3 SFT adapter",
+  "v4c DPO adapter"
+ ]
+}

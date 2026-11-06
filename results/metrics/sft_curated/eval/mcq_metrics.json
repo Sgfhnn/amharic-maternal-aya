@@ -1,0 +1,22 @@
+{
+  "belebele_amh_Ethi": {
+    "n": 900,
+    "accuracy": 0.63,
+    "pred_dist": {
+      "A": 241,
+      "B": 254,
+      "C": 255,
+      "D": 150
+    }
+  },
+  "afrimmlu_amh": {
+    "n": 500,
+    "accuracy": 0.442,
+    "pred_dist": {
+      "A": 153,
+      "B": 134,
+      "C": 170,
+      "D": 43
+    }
+  }
+}

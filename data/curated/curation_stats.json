@@ -1,0 +1,325 @@
+{
+ "train": {
+  "steps": [
+   {
+    "step": "load",
+    "out": 7109,
+    "by_source": {
+     "amhqa_mendeley": 1334,
+     "walelign_srh": 654,
+     "afrihealth_qa": 2177,
+     "ethionlp_general": 2843,
+     "danilior_maternal": 101
+    }
+   },
+   {
+    "step": "TextCleaner (CuratorKIT)",
+    "in": 7109,
+    "out": 7109,
+    "removed": 0
+   },
+   {
+    "step": "ExactDeduplicator (CuratorKIT)",
+    "in": 7109,
+    "out": 7107,
+    "removed": 2
+   },
+   {
+    "step": "MinHashDeduplicator 0.9 (CuratorKIT)",
+    "in": 7107,
+    "out": 7072,
+    "removed": 35
+   },
+   {
+    "step": "BrokenTextGate (CuratorKIT BaseGate)",
+    "in": 7072,
+    "out": 7050,
+    "removed": 22,
+    "reasons": {
+     "broken_text:context_not_given": 2,
+     "broken_text:unfilled_template": 15,
+     "broken_text:repeated_char_run": 3,
+     "broken_text:unspaced_run": 2
+    }
+   },
+   {
+    "step": "URLSentenceStripper (CuratorKIT BaseGate)",
+    "in": 7050,
+    "out": 7049,
+    "removed": 1,
+    "reasons": {
+     "broken_text:email_or_url_only": 1
+    },
+    "rows_with_url_or_email": 28,
+    "rows_rejected_after_strip": 1
+   },
+   {
+    "step": "EnglishHeavyGate (CuratorKIT BaseGate)",
+    "in": 7049,
+    "out": 6996,
+    "removed": 53,
+    "reasons": {
+     "english_heavy:row_latin": 20,
+     "english_heavy:answer_latin": 33
+    }
+   },
+   {
+    "step": "OffTopicGate (CuratorKIT BaseGate)",
+    "in": 6996,
+    "out": 6981,
+    "removed": 15,
+    "reasons": {
+     "off_topic:llm": 15
+    },
+    "keyword_candidates": 79,
+    "llm_judged": 79,
+    "dropped": 15,
+    "llm_used": true
+   },
+   {
+    "step": "QAMismatchGate (CuratorKIT BaseGate)",
+    "in": 6981,
+    "out": 6945,
+    "removed": 36,
+    "reasons": {
+     "qa_mismatch:llm": 36
+    },
+    "health_rows": 4189,
+    "cosine_thresholds_by_source": {
+     "amhqa_mendeley": 0.0365,
+     "walelign_srh": 0.0858,
+     "afrihealth_qa": 0.036,
+     "danilior_maternal": 0.0041
+    },
+    "candidates": 537,
+    "acronym_low_cos_candidates": 25,
+    "llm_judged": 517,
+    "dropped": 36,
+    "llm_used": true
+   },
+   {
+    "step": "EthioNLPDownsampler (CuratorKIT BaseNormalizer)",
+    "in": 6945,
+    "out": 4806,
+    "removed": 2139,
+    "ethionlp_in": 2792,
+    "fit_prompt_budget": 653,
+    "kept": 653,
+    "by_subtask_kept": {
+     "amharic_mt eng-amh": 233,
+     "amharic_poem_generation": 2,
+     "amharic_story_generation": 39,
+     "amharic_title_generation": 232,
+     "amharicqa": 12,
+     "xlsum_summerization": 135
+    },
+    "dropped_too_long_prompt": 2139,
+    "dropped_by_sampling": 0
+   },
+   {
+    "step": "DangerSignReferral (CuratorKIT BaseNormalizer)",
+    "in": 4806,
+    "out": 4806,
+    "removed": 0,
+    "danger_sign_questions": 17,
+    "already_ended_with_urgent_referral": 2,
+    "referral_line_added": 15,
+    "added_by_source": {
+     "danilior_maternal": 8,
+     "afrihealth_qa": 5,
+     "walelign_srh": 2
+    },
+    "line": "ይህ የአደጋ ምልክት ሊሆን ስለሚችል አሁኑኑ ወደ ጤና ባለሙያ ወይም በአቅራቢያዎ ወዳለ ጤና ተቋም ይሂዱ።"
+   },
+   {
+    "step": "SchemaGate (CuratorKIT)",
+    "in": 4806,
+    "out": 4806,
+    "removed": 0,
+    "reasons": {}
+   }
+  ],
+  "final": 4806,
+  "final_by_source": {
+   "afrihealth_qa": 2117,
+   "amhqa_mendeley": 1317,
+   "walelign_srh": 619,
+   "ethionlp_general": 653,
+   "danilior_maternal": 100
+  },
+  "final_by_topic": {
+   "srh": 2242,
+   "general_health": 1156,
+   "maternal": 755,
+   "general": 653
+  },
+  "danger_examples": [
+   "በ 30 ሳምንታት ውስጥ ምጥ እያጋጠመኝ ነው, ይህ የቅድመ ወሊድ ምጥ ነው?",
+   "የድህረ ወሊድ ድብርት እጨነቃለሁ፣ ምልክቶቹ እና ምልክቶች ምንድን ናቸው?",
+   "የ ድህረ ወሊድ ስሜት እና የጭንቀት መዛባት የአካባቢ ስሞች እና ምልክቶች ምንድናቸው?",
+   "በእርግዝና ወቅት ከባድ ራስ ምታት እያጋጠመኝ ነው, መጨነቅ አለብኝ?",
+   "ምጥ ላይ መሆኔን እንዴት አውቃለሁ?",
+   "ከወሊድ በኋላ የኢንፌክሽን ምልክቶች ምንድ ናቸው?",
+   "ከወሊድ በኋላ የመንፈስ ጭንቀት ምልክቶች ምንድ ናቸው?",
+   "አንዲት ወጣት ነፍሰ ጡር ሴት ኤክላምፕሲያ (በአደገኛ ሁኔታ የደም ግፊት) እያጋጠማት መሆኑን የሚያሳዩ አፋጣኝ ምልክቶች ምንድናቸው?",
+   "በእርግዝና ወቅት ከባድ የሆድ ህመም እያጋጠመኝ ነው, ምን ማድረግ አለብኝ?",
+   "ከወሊድ በኋላ የሚከሰተውን የመንፈስ ጭንቀት ለይቶ ማወቅና መቋቋም የሚቻለው እንዴት ነው?",
+   "በጣም በለጋ ዕድሜየ ብጸንስ ወይም ባረግዝ ፤ ምጥ እና ወሊድ ከባድ ይሆንብኛል?",
+   "ከወለድኩ በኋላ ሁልጊዜ ድባቴ እና ጭንቀት ከተሰማኝ የአዕምሮ መታወክ ነውን?",
+   "የድህረ ወሊድ ደም መፍሰስን እንዴት መቆጣጠር እችላለሁ?",
+   "ከባድ ምጥ ካለብኝ አንድ ስህተት ስለሠራሁ ወይስ ኃጢአት ስለሠራሁ ነው?",
+   "በእርግዝና ወይም በወሊድ ጊዜ ምንም አይነት ችግር ካጋጠመኝ ምን ማድረግ አለብኝ?"
+  ]
+ },
+ "dev": {
+  "steps": [
+   {
+    "step": "load",
+    "out": 374,
+    "by_source": {
+     "walelign_srh": 35,
+     "afrihealth_qa": 94,
+     "ethionlp_general": 157,
+     "amhqa_mendeley": 84,
+     "danilior_maternal": 4
+    }
+   },
+   {
+    "step": "TextCleaner (CuratorKIT)",
+    "in": 374,
+    "out": 374,
+    "removed": 0
+   },
+   {
+    "step": "ExactDeduplicator (CuratorKIT)",
+    "in": 374,
+    "out": 374,
+    "removed": 0
+   },
+   {
+    "step": "MinHashDeduplicator 0.9 (CuratorKIT)",
+    "in": 374,
+    "out": 374,
+    "removed": 0
+   },
+   {
+    "step": "BrokenTextGate (CuratorKIT BaseGate)",
+    "in": 374,
+    "out": 374,
+    "removed": 0,
+    "reasons": {}
+   },
+   {
+    "step": "URLSentenceStripper (CuratorKIT BaseGate)",
+    "in": 374,
+    "out": 374,
+    "removed": 0,
+    "reasons": {},
+    "rows_with_url_or_email": 1,
+    "rows_rejected_after_strip": 0
+   },
+   {
+    "step": "EnglishHeavyGate (CuratorKIT BaseGate)",
+    "in": 374,
+    "out": 371,
+    "removed": 3,
+    "reasons": {
+     "english_heavy:answer_latin": 3
+    }
+   },
+   {
+    "step": "OffTopicGate (CuratorKIT BaseGate)",
+    "in": 371,
+    "out": 371,
+    "removed": 0,
+    "reasons": {},
+    "keyword_candidates": 7,
+    "llm_judged": 7,
+    "dropped": 0,
+    "llm_used": true
+   },
+   {
+    "step": "QAMismatchGate (CuratorKIT BaseGate)",
+    "in": 371,
+    "out": 371,
+    "removed": 0,
+    "reasons": {},
+    "health_rows": 214,
+    "cosine_thresholds_by_source": {
+     "walelign_srh": 0.1605,
+     "afrihealth_qa": 0.0319,
+     "amhqa_mendeley": 0.0495,
+     "danilior_maternal": 0.0241
+    },
+    "candidates": 27,
+    "acronym_low_cos_candidates": 0,
+    "llm_judged": 27,
+    "dropped": 0,
+    "llm_used": true
+   },
+   {
+    "step": "EthioNLPDownsampler (CuratorKIT BaseNormalizer)",
+    "in": 371,
+    "out": 249,
+    "removed": 122,
+    "ethionlp_in": 157,
+    "fit_prompt_budget": 35,
+    "kept": 35,
+    "by_subtask_kept": {
+     "amharic_mt eng-amh": 11,
+     "amharic_poem_generation": 1,
+     "amharic_story_generation": 4,
+     "amharic_title_generation": 11,
+     "amharicqa": 1,
+     "xlsum_summerization": 7
+    },
+    "dropped_too_long_prompt": 122,
+    "dropped_by_sampling": 0
+   },
+   {
+    "step": "DangerSignReferral (CuratorKIT BaseNormalizer)",
+    "in": 249,
+    "out": 249,
+    "removed": 0,
+    "danger_sign_questions": 0,
+    "already_ended_with_urgent_referral": 0,
+    "referral_line_added": 0,
+    "added_by_source": {},
+    "line": "ይህ የአደጋ ምልክት ሊሆን ስለሚችል አሁኑኑ ወደ ጤና ባለሙያ ወይም በአቅራቢያዎ ወዳለ ጤና ተቋም ይሂዱ።"
+   },
+   {
+    "step": "SchemaGate (CuratorKIT)",
+    "in": 249,
+    "out": 249,
+    "removed": 0,
+    "reasons": {}
+   }
+  ],
+  "final": 249,
+  "final_by_source": {
+   "amhqa_mendeley": 84,
+   "walelign_srh": 35,
+   "ethionlp_general": 35,
+   "afrihealth_qa": 91,
+   "danilior_maternal": 4
+  },
+  "final_by_topic": {
+   "general_health": 72,
+   "maternal": 42,
+   "general": 35,
+   "srh": 100
+  },
+  "danger_examples": []
+ },
+ "llm": {
+  "enabled": true,
+  "model": "google/gemini-2.5-flash-lite",
+  "calls": 1,
+  "cost_micro_usd_reported": 0,
+  "error": null,
+  "cline_balance_before_micro_usd": 303595,
+  "cline_balance_after_micro_usd": 302830
+ },
+ "test_split": "not read, not modified",
+ "created": "2026-11-05T10:42:47.374766+00:00"
+}

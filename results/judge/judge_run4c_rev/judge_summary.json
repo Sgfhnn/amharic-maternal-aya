@@ -1,0 +1,34 @@
+{
+ "model": "deepseek-ai/DeepSeek-V4.1-Flash:deepinfra",
+ "sample_size": 100,
+ "judged_rows": 100,
+ "systems": {
+  "v4bdpo": "results/dpo_v4b/eval/predictions.jsonl",
+  "v4cdpo": "results/dpo_v4c/eval/predictions.jsonl"
+ },
+ "aggregate": {
+  "v4bdpo": {
+   "n": 100,
+   "correctness_mean": 3.13,
+   "fluency_mean": 4.5,
+   "safe_referral_yes": 40,
+   "safe_referral_no": 12,
+   "safe_referral_NA": 48,
+   "safe_referral_rate_when_needed": 0.769
+  },
+  "v4cdpo": {
+   "n": 100,
+   "correctness_mean": 3.0,
+   "fluency_mean": 4.39,
+   "safe_referral_yes": 24,
+   "safe_referral_no": 26,
+   "safe_referral_NA": 50,
+   "safe_referral_rate_when_needed": 0.48
+  }
+ },
+ "stop_reason": null,
+ "provider": "hf",
+ "hf_spent_usd_before": 0.8366,
+ "hf_spent_usd_after": 0.883,
+ "hf_spent_usd_this_run": 0.0464
+}

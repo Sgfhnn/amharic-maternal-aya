@@ -1,0 +1,106 @@
+{
+ "created": "2026-11-06T07:40:35.167566+00:00",
+ "steps": [
+  {
+   "step": "KeepUrgentPairs (v3 urgent pairs, unchanged)",
+   "in": 803,
+   "out": 225,
+   "notes": {
+    "dropped_v3_routine_referral_pairs": 578
+   }
+  },
+  {
+   "step": "SelectRoutineCounterPairs",
+   "in": 1258,
+   "out": 225,
+   "notes": {
+    "routine_rewrite_candidates": 296,
+    "routine_rewrite_fit_768": 296,
+    "picked_routine_rewrite": 113,
+    "factual_candidates": 962,
+    "factual_fit_768": 959,
+    "picked_factual": 112,
+    "picked_factual_by_source": {
+     "afrihealth_qa": 35,
+     "amhqa_mendeley": 34,
+     "danilior_maternal": 9,
+     "walelign_srh": 34
+    }
+   }
+  },
+  {
+   "step": "BoilerplateStripper (CuratorKIT BaseNormalizer) on routine chosen",
+   "in": 225,
+   "out": 225,
+   "notes": {}
+  },
+  {
+   "step": "BoilerplateAppender (CuratorKIT BaseNormalizer): rejected = chosen + v3-DPO boilerplate",
+   "in": 225,
+   "out": 225,
+   "notes": {
+    "distinct_lines_used": 28,
+    "top_lines": [
+     [
+      "ለተሟላ ምርመራ እና ትክክለኛ ህክምና ወደ ጤና ተቋም በመሄድ የጤና ባለሙያ ያማክሩ።",
+      54
+     ],
+     [
+      "ለተሟላ ምርመራ እና ትክክለኛ ህክምና ወደ ጤና ጣቢያ በመሄድ የጤና ባለሙያ ያማክሩ።",
+      48
+     ],
+     [
+      "ለተሟላ ምርመራ እና ትክክለኛ ሕክምና ወደ ጤና ተቋም በመሄድ የጤና ባለሙያ ያማክሩ።",
+      28
+     ],
+     [
+      "ለተገቢው ምርመራ እና ህክምና ወደ ጤና ጣቢያ በመሄድ የጤና ባለሙያ ያማክሩ።",
+      16
+     ],
+     [
+      "ለተሟላ ምርመራ እና ትክክለኛ ሕክምና ወደ ጤና ጣቢያ በመሄድ የጤና ባለሙያ ያማክሩ።",
+      13
+     ]
+    ]
+   }
+  },
+  {
+   "step": "SchemaGate (CuratorKIT)",
+   "in": 450,
+   "out": 450,
+   "notes": {
+    "rejected": 0
+   }
+  }
+ ],
+ "pairs_train": 425,
+ "pairs_dev": 25,
+ "by_care": {
+  "routine": 225,
+  "urgent": 225
+ },
+ "by_kind": {
+  "routine_rewrite": 113,
+  "minus_referral": 182,
+  "factual_answer": 112,
+  "original_mt_answer": 43
+ },
+ "by_care_split": {
+  "train": {
+   "routine": 214,
+   "urgent": 211
+  },
+  "dev": {
+   "urgent": 14,
+   "routine": 11
+  }
+ },
+ "urgent_chosen_with_referral_line": 225,
+ "v3dpo_boilerplate_lines_found": 109,
+ "boilerplate_lines_used_pool": 32,
+ "sft_v4_boilerplate_stripped": {
+  "stripped_routine": 307,
+  "stripped_none": 3
+ },
+ "sft_v4_rows": 2691
+}

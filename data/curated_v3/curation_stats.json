@@ -1,0 +1,129 @@
+{
+ "created": "2026-11-05T13:52:24.456510+00:00",
+ "input": "data/curated/train.jsonl (4806 rows)",
+ "steps": [
+  {
+   "step": "LLMQualityGate fluency>=4 & correctness>=4 (CuratorKIT BaseGate)",
+   "in": 4806,
+   "out": 2395,
+   "removed": 2411,
+   "notes": {
+    "kept_afrihealth_qa": 1584,
+    "kept_amhqa_mendeley": 142,
+    "kept_danilior_maternal": 45,
+    "kept_ethionlp_general": 312,
+    "kept_walelign_srh": 312,
+    "low_correctness_afrihealth_qa": 56,
+    "low_correctness_amhqa_mendeley": 15,
+    "low_correctness_danilior_maternal": 5,
+    "low_correctness_ethionlp_general": 151,
+    "low_correctness_walelign_srh": 26,
+    "low_fluency_afrihealth_qa": 477,
+    "low_fluency_amhqa_mendeley": 1160,
+    "low_fluency_danilior_maternal": 50,
+    "low_fluency_ethionlp_general": 190,
+    "low_fluency_walelign_srh": 281
+   }
+  },
+  {
+   "step": "ReferralRewriter (CuratorKIT BaseNormalizer)",
+   "in": 2395,
+   "out": 2691,
+   "removed": -296,
+   "notes": {
+    "rewrites": 528,
+    "verified_ok": 480,
+    "verified_urgent": 182,
+    "verified_routine": 298,
+    "readmitted_after_quality_gate": 173,
+    "synthetic_danger_sign_added": 123,
+    "failed_verification": 48,
+    "fail_reasons": {
+     "latin_letters": 23,
+     "body_has_referral": 12,
+     "low_correctness": 8,
+     "low_fluency": 3,
+     "unchecked": 2
+    }
+   }
+  },
+  {
+   "step": "SchemaGate (CuratorKIT)",
+   "in": 2691,
+   "out": 2691,
+   "removed": 0,
+   "notes": {}
+  }
+ ],
+ "final_train": 2691,
+ "final_by_source": {
+  "walelign_srh": 335,
+  "synthetic_danger_sign": 123,
+  "afrihealth_qa": 1625,
+  "amhqa_mendeley": 237,
+  "danilior_maternal": 59,
+  "ethionlp_general": 312
+ },
+ "final_by_topic": {
+  "srh": 1650,
+  "maternal": 520,
+  "general_health": 209,
+  "general": 312
+ },
+ "danger_matcher": {
+  "health_rows": 4153,
+  "llm_labelled": 4153,
+  "regex_matches": 25,
+  "regex_matches_llm_confirmed_urgent": 13,
+  "llm_urgent_total": 70,
+  "llm_urgent_missed_by_regex": 57,
+  "llm_routine_total": 1341,
+  "regex_by_group": {
+   "bleeding": 4,
+   "postpartum": 11,
+   "convulsions": 4,
+   "headache_vision": 1,
+   "newborn": 3,
+   "suicidal": 2,
+   "prolonged_labour": 1,
+   "abortion_complication": 1,
+   "abdominal_pain": 1
+  },
+  "regex_by_group_llm_confirmed": {
+   "bleeding": 4,
+   "postpartum": 4,
+   "convulsions": 2,
+   "headache_vision": 1,
+   "suicidal": 2,
+   "prolonged_labour": 1,
+   "abdominal_pain": 1,
+   "newborn": 1
+  },
+  "run2_matcher_questions": 17
+ },
+ "dpo": {
+  "pairs_train": 763,
+  "pairs_dev": 40,
+  "by_kind": {
+   "minus_referral": 480,
+   "original_mt_answer": 323
+  },
+  "by_care": {
+   "routine": 578,
+   "urgent": 225
+  }
+ },
+ "models": {
+  "quality_and_rewrite": "google/gemma-4-31B-it:deepinfra",
+  "verify": "deepseek-ai/DeepSeek-V4-Flash-0731:deepinfra"
+ },
+ "hf_spend_usd_total_run3_so_far": 0.5538,
+ "hf_spend_by_tag": {
+  "classify": 0.0937,
+  "quality_train": 0.3236,
+  "rewrite": 0.1061,
+  "synth": 0.003,
+  "verify": 0.0273
+ },
+ "test_split": "not read, not modified"
+}

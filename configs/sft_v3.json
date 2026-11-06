@@ -1,0 +1,58 @@
+{
+ "framework": "aligntune (TRL backend)",
+ "hp": {
+  "epochs": 1,
+  "lr": 0.0001,
+  "max_grad_norm": 1.0,
+  "r": 16,
+  "alpha": 32,
+  "dropout": 0.05,
+  "max_len": 1024,
+  "bs": 2,
+  "grad_acc": 8,
+  "targets": [
+   "q_proj",
+   "k_proj",
+   "v_proj",
+   "o_proj",
+   "gate_proj",
+   "up_proj",
+   "down_proj"
+  ]
+ },
+ "data": {
+  "train": {
+   "file": "chat_train_v3.jsonl",
+   "in": 2691,
+   "kept": 2691,
+   "dropped_no_supervised_tokens": 0,
+   "dropped_by_source": {},
+   "empty_assistant": 0,
+   "answer_truncated_kept": 22
+  },
+  "val": {
+   "file": "chat_dev_v3.jsonl",
+   "in": 249,
+   "kept": 249,
+   "dropped_no_supervised_tokens": 0,
+   "dropped_by_source": {},
+   "empty_assistant": 0,
+   "answer_truncated_kept": 18
+  }
+ },
+ "model_id": "CohereLabs/tiny-aya-earth+r2curated",
+ "model_dir": "/tmp/m2_r2curated",
+ "min_asst_tokens": 16,
+ "final_eval": {
+  "eval_loss": 1.4607394933700562,
+  "eval_runtime": 107.5668,
+  "eval_samples_per_second": 2.315,
+  "eval_steps_per_second": 1.162,
+  "eval_entropy": 1.4755792212486267,
+  "eval_mean_token_accuracy": 0.6598420777320861,
+  "eval_num_tokens": 1431693.0,
+  "epoch": 1.0
+ },
+ "nan_events": [],
+ "train_seconds": 3328.520275115967
+}

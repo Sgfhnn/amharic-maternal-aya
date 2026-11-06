@@ -1,0 +1,134 @@
+{
+  "seed": 42,
+  "raw_rows_per_source": {
+    "walelign_srh": 1000,
+    "afrihealth_qa": 2307,
+    "danilior_maternal": 105,
+    "amhqa_mendeley": 2051,
+    "kaggle_afri_enhanced": 2307,
+    "ethionlp_general": "5000 candidates sampled from 35338 rows (7371 health-keyword rows)"
+  },
+  "after_cleaning_dedup_per_source": {
+    "amhqa_mendeley": 1818,
+    "walelign_srh": 839,
+    "afrihealth_qa": 2271,
+    "ethionlp_general": 3000,
+    "danilior_maternal": 105
+  },
+  "drops_per_source": {
+    "walelign_srh": {
+      "not_mostly_geez": 2,
+      "short_answer_lt15": 1,
+      "dup_question": 150,
+      "dup_exact_or_near": 8
+    },
+    "afrihealth_qa": {
+      "not_mostly_geez": 8,
+      "short_answer_lt15": 7,
+      "dup_question": 21
+    },
+    "amhqa_mendeley": {
+      "short_answer_lt15": 1,
+      "dup_question": 213,
+      "dup_exact_or_near": 19
+    },
+    "kaggle_afri_enhanced": {
+      "not_mostly_geez": 7,
+      "dup_question": 37,
+      "excluded_source_v2": 2263
+    },
+    "ethionlp_general": {
+      "short_answer_lt15": 213,
+      "dup_question": 295
+    }
+  },
+  "per_split": {
+    "train": {
+      "rows": 7109,
+      "by_source": {
+        "amhqa_mendeley": 1334,
+        "walelign_srh": 654,
+        "afrihealth_qa": 2177,
+        "ethionlp_general": 2843,
+        "danilior_maternal": 101
+      },
+      "by_topic": {
+        "general_health": 1172,
+        "maternal": 772,
+        "srh": 2322,
+        "general": 2843
+      },
+      "avg_question_chars": 38.0,
+      "avg_answer_chars": 234.6,
+      "avg_answer_chars_by_source": {
+        "danilior_maternal": 93.0,
+        "afrihealth_qa": 106.2,
+        "amhqa_mendeley": 732.7,
+        "walelign_srh": 179.7,
+        "ethionlp_general": 116.9
+      }
+    },
+    "dev": {
+      "rows": 374,
+      "by_source": {
+        "walelign_srh": 35,
+        "afrihealth_qa": 94,
+        "ethionlp_general": 157,
+        "amhqa_mendeley": 84,
+        "danilior_maternal": 4
+      },
+      "by_topic": {
+        "srh": 103,
+        "general": 157,
+        "maternal": 42,
+        "general_health": 72
+      },
+      "avg_question_chars": 37.0,
+      "avg_answer_chars": 263.9,
+      "avg_answer_chars_by_source": {
+        "danilior_maternal": 91.2,
+        "afrihealth_qa": 102.8,
+        "amhqa_mendeley": 736.5,
+        "walelign_srh": 254.7,
+        "ethionlp_general": 113.9
+      }
+    },
+    "test": {
+      "rows": 550,
+      "by_source": {
+        "amhqa_mendeley": 400,
+        "walelign_srh": 150
+      },
+      "by_topic": {
+        "general_health": 367,
+        "maternal": 88,
+        "srh": 95
+      },
+      "avg_question_chars": 40.1,
+      "avg_answer_chars": 507.4,
+      "avg_answer_chars_by_source": {
+        "amhqa_mendeley": 624.6,
+        "walelign_srh": 194.9
+      }
+    }
+  },
+  "licenses": {
+    "walelign_srh": "CC BY-NC 4.0 (Walelign/Amharic_SRH_Dataset)",
+    "afrihealth_qa": "CC BY 4.0 (ImhotepSystems/AfriHealth-QA)",
+    "danilior_maternal": "unspecified (danilior/amharic_maternal_health; no license on card)",
+    "amhqa_mendeley": "CC BY 4.0 (Bogale et al. 2026, Mendeley Data 10.17632/8cks7m5f8s.1)",
+    "ethionlp_general": "unspecified on card (EthioNLP/Amharic_Instruction_dataset, Walia-LLM SFT mix of upstream datasets)"
+  },
+  "excluded_sources": {
+    "kaggle_afri_enhanced": "CC BY-SA 4.0 (Kaggle dokster/health-qa-in-low-resource-african-languages)"
+  },
+  "ethionlp_general_by_datasource": {
+    "xlsum_summerization": 1622,
+    "amharic_title_generation": 1002,
+    "amharic_story_generation": 80,
+    "amharic_mt eng-amh": 248,
+    "amharicqa": 45,
+    "amharic_poem_generation": 3
+  },
+  "ethionlp_general_health_keyword_rows": 2424
+}

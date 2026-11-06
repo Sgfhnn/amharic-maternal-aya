@@ -1,0 +1,144 @@
+{
+ "automatic": {
+  "Baseline": {
+   "chrF++ test (550)": 10.320670962674992,
+   "chrF++ AmHQA (400)": 9.172611060064385,
+   "chrF++ Walelign SRH (150)": 17.762100236245693,
+   "AuditKIT chrf per-sample mean": 18.76072631109316,
+   "Belebele amh_Ethi acc % (900)": 61.66666666666667,
+   "AfriMMLU amh acc % (500)": 46.400000000000006,
+   "Hit 256-token cap %": 98.54545454545455,
+   "Avg answer chars (ref 507)": 436.7090909090909,
+   "Markdown in answer %": 96.0,
+   "Referral line % non-urgent test (549)": 0.7285974499089253,
+   "Urgent 'go now' line % factual test (447)": 0.44742729306487694,
+   "Referral line % held-out urgent probe (82)": null
+  },
+  "Run-2 B SFT": {
+   "chrF++ test (550)": 9.050648247766869,
+   "chrF++ AmHQA (400)": 8.26086496938914,
+   "chrF++ Walelign SRH (150)": 15.133688953105736,
+   "AuditKIT chrf per-sample mean": 18.76072631109316,
+   "Belebele amh_Ethi acc % (900)": 63.0,
+   "AfriMMLU amh acc % (500)": 44.2,
+   "Hit 256-token cap %": 44.72727272727273,
+   "Avg answer chars (ref 507)": 254.19272727272727,
+   "Markdown in answer %": 0.0,
+   "Referral line % non-urgent test (549)": 0.0,
+   "Urgent 'go now' line % factual test (447)": 0.0,
+   "Referral line % held-out urgent probe (82)": null
+  },
+  "v3 SFT": {
+   "chrF++ test (550)": 9.825625305061424,
+   "chrF++ AmHQA (400)": 8.925894410672845,
+   "chrF++ Walelign SRH (150)": 16.593237729062444,
+   "AuditKIT chrf per-sample mean": 19.947594440872084,
+   "Belebele amh_Ethi acc % (900)": 63.44444444444445,
+   "AfriMMLU amh acc % (500)": 44.4,
+   "Hit 256-token cap %": 35.27272727272728,
+   "Avg answer chars (ref 507)": 251.23272727272726,
+   "Markdown in answer %": 0.0,
+   "Referral line % non-urgent test (549)": 12.750455373406194,
+   "Urgent 'go now' line % factual test (447)": 0.0,
+   "Referral line % held-out urgent probe (82)": 67.07317073170732
+  },
+  "v3 DPO": {
+   "chrF++ test (550)": 10.728679143703307,
+   "chrF++ AmHQA (400)": 9.549317820708627,
+   "chrF++ Walelign SRH (150)": 19.047969057112034,
+   "AuditKIT chrf per-sample mean": 21.3232366317435,
+   "Belebele amh_Ethi acc % (900)": 62.77777777777778,
+   "AfriMMLU amh acc % (500)": 44.0,
+   "Hit 256-token cap %": 14.000000000000002,
+   "Avg answer chars (ref 507)": 267.64363636363635,
+   "Markdown in answer %": 0.0,
+   "Referral line % non-urgent test (549)": 86.52094717668488,
+   "Urgent 'go now' line % factual test (447)": 1.342281879194631,
+   "Referral line % held-out urgent probe (82)": 100.0
+  },
+  "v4b DPO": {
+   "chrF++ test (550)": 12.316369420946787,
+   "chrF++ AmHQA (400)": 11.492667418285855,
+   "chrF++ Walelign SRH (150)": 18.421501038828698,
+   "AuditKIT chrf per-sample mean": 20.12309283993447,
+   "Belebele amh_Ethi acc % (900)": 62.88888888888889,
+   "AfriMMLU amh acc % (500)": 43.8,
+   "Hit 256-token cap %": 34.54545454545455,
+   "Avg answer chars (ref 507)": 321.23818181818183,
+   "Markdown in answer %": 0.18181818181818182,
+   "Referral line % non-urgent test (549)": 22.950819672131146,
+   "Urgent 'go now' line % factual test (447)": 19.23937360178971,
+   "Referral line % held-out urgent probe (82)": 98.78048780487805
+  },
+  "v4c DPO (submitted)": {
+   "chrF++ test (550)": 12.26122403720306,
+   "chrF++ AmHQA (400)": 11.357893001567525,
+   "chrF++ Walelign SRH (150)": 19.021611792073305,
+   "AuditKIT chrf per-sample mean": 22.66717522088186,
+   "Belebele amh_Ethi acc % (900)": 63.55555555555556,
+   "AfriMMLU amh acc % (500)": 44.4,
+   "Hit 256-token cap %": 29.454545454545457,
+   "Avg answer chars (ref 507)": 309.50545454545454,
+   "Markdown in answer %": 0.0,
+   "Referral line % non-urgent test (549)": 5.828779599271402,
+   "Urgent 'go now' line % factual test (447)": 1.342281879194631,
+   "Referral line % held-out urgent probe (82)": 96.34146341463415
+  }
+ },
+ "judge": {
+  "Run 3 five-way (DeepSeek-V4.1-Flash, 100 rows)": {
+   "Baseline": [
+    2.56,
+    3.8
+   ],
+   "Run-2 B SFT": [
+    2.38,
+    3.37
+   ],
+   "v3 SFT": [
+    2.58,
+    3.66
+   ]
+  },
+  "v3 SFT vs v3 DPO head-to-head": {
+   "v3 SFT": [
+    2.65,
+    3.68
+   ],
+   "v3 DPO": [
+    3.29,
+    4.27
+   ]
+  },
+  "v3 DPO vs v4b head-to-head": {
+   "v3 DPO": [
+    3.18,
+    4.34
+   ],
+   "v4b DPO": [
+    3.12,
+    4.47
+   ]
+  },
+  "v4b vs v4c head-to-head": {
+   "v4b DPO": [
+    3.13,
+    4.5
+   ],
+   "v4c DPO (submitted)": [
+    3.01,
+    4.43
+   ]
+  },
+  "v4b vs v4c, labels reversed": {
+   "v4b DPO": [
+    3.13,
+    4.5
+   ],
+   "v4c DPO (submitted)": [
+    3.0,
+    4.39
+   ]
+  }
+ }
+}

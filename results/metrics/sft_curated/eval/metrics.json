@@ -1,0 +1,91 @@
+{
+  "overall": {
+    "n": 550,
+    "chrf_pp": 9.050648247766869,
+    "chrf": 10.181546879215949,
+    "bleu_13a": 1.4030435880376744,
+    "spbleu_flores200": 3.887865029255408
+  },
+  "by_source": {
+    "amhqa_mendeley": {
+      "n": 400,
+      "chrf_pp": 8.26086496938914,
+      "chrf": 9.31197371661995,
+      "bleu_13a": 1.0982838694750803,
+      "spbleu_flores200": 3.0666360703523474
+    },
+    "walelign_srh": {
+      "n": 150,
+      "chrf_pp": 15.133688953105736,
+      "chrf": 16.873857559756875,
+      "bleu_13a": 3.8489610862578125,
+      "spbleu_flores200": 10.061337447390528
+    }
+  },
+  "by_topic": {
+    "general_health": {
+      "n": 367,
+      "chrf_pp": 8.525452833018857,
+      "chrf": 9.608183559707872,
+      "bleu_13a": 1.2825910503092681,
+      "spbleu_flores200": 3.4028778192372817
+    },
+    "maternal": {
+      "n": 88,
+      "chrf_pp": 8.718802362513765,
+      "chrf": 9.78304718171596,
+      "bleu_13a": 0.83895331689974,
+      "spbleu_flores200": 3.3996200502881333
+    },
+    "srh": {
+      "n": 95,
+      "chrf_pp": 15.58054914648744,
+      "chrf": 17.38037084810839,
+      "bleu_13a": 4.199004230076795,
+      "spbleu_flores200": 9.585071558225176
+    }
+  },
+  "diagnostics": {
+    "avg_pred_chars": 254.19272727272727,
+    "avg_ref_chars": 507.40181818181816,
+    "avg_pred_tokens": 157.21636363636364,
+    "stopped_before_max_tokens": 0.5527272727272727,
+    "empty_predictions": 0,
+    "avg_ethiopic_share": 0.9844190149886907,
+    "referral_keyword_rate_pred": 0.016363636363636365,
+    "referral_keyword_rate_ref": 0.09818181818181818,
+    "markdown_rate_pred": 0.0
+  },
+  "auditkit_per_sample_mean": {
+    "headline": {
+      "chrf": 0.1876072631109316,
+      "bleu": 0.008170916155714887,
+      "rouge_l": 0.1122801052572733,
+      "f1_score": 0.10820453994615882
+    },
+    "fingerprint": "d37a289781b63dac",
+    "errors": []
+  },
+  "mcq": {
+    "belebele_amh_Ethi": {
+      "n": 900,
+      "accuracy": 0.63,
+      "pred_dist": {
+        "A": 241,
+        "B": 254,
+        "C": 255,
+        "D": 150
+      }
+    },
+    "afrimmlu_amh": {
+      "n": 500,
+      "accuracy": 0.442,
+      "pred_dist": {
+        "A": 153,
+        "B": 134,
+        "C": 170,
+        "D": 43
+      }
+    }
+  }
+}

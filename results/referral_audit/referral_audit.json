@@ -1,0 +1,266 @@
+{
+ "label_counts": {
+  "urgent": 1,
+  "routine": 102,
+  "none": 447
+ },
+ "systems": {
+  "Baseline": {
+   "all": {
+    "n": 550,
+    "referral_line": 0.007272727272727273,
+    "boilerplate": 0.0036363636363636364,
+    "urgent_line": 0.0036363636363636364,
+    "wide_keyword": 0.04363636363636364
+   },
+   "urgent": {
+    "n": 1,
+    "referral_line": 0.0,
+    "boilerplate": 0.0,
+    "urgent_line": 0.0,
+    "wide_keyword": 0.0
+   },
+   "routine": {
+    "n": 102,
+    "referral_line": 0.0196078431372549,
+    "boilerplate": 0.0196078431372549,
+    "urgent_line": 0.0,
+    "wide_keyword": 0.09803921568627451
+   },
+   "none": {
+    "n": 447,
+    "referral_line": 0.0044742729306487695,
+    "boilerplate": 0.0,
+    "urgent_line": 0.0044742729306487695,
+    "wide_keyword": 0.03131991051454139
+   },
+   "non_urgent": {
+    "n": 549,
+    "referral_line": 0.007285974499089253,
+    "boilerplate": 0.0036429872495446266,
+    "urgent_line": 0.0036429872495446266,
+    "wide_keyword": 0.04371584699453552
+   }
+  },
+  "v3 SFT": {
+   "all": {
+    "n": 550,
+    "referral_line": 0.12727272727272726,
+    "boilerplate": 0.12545454545454546,
+    "urgent_line": 0.0018181818181818182,
+    "wide_keyword": 0.17272727272727273
+   },
+   "urgent": {
+    "n": 1,
+    "referral_line": 0.0,
+    "boilerplate": 0.0,
+    "urgent_line": 0.0,
+    "wide_keyword": 0.0
+   },
+   "routine": {
+    "n": 102,
+    "referral_line": 0.24509803921568626,
+    "boilerplate": 0.23529411764705882,
+    "urgent_line": 0.00980392156862745,
+    "wide_keyword": 0.3431372549019608
+   },
+   "none": {
+    "n": 447,
+    "referral_line": 0.10067114093959731,
+    "boilerplate": 0.10067114093959731,
+    "urgent_line": 0.0,
+    "wide_keyword": 0.1342281879194631
+   },
+   "non_urgent": {
+    "n": 549,
+    "referral_line": 0.12750455373406194,
+    "boilerplate": 0.12568306010928962,
+    "urgent_line": 0.0018214936247723133,
+    "wide_keyword": 0.17304189435336975
+   },
+   "probe_urgent": {
+    "n": 82,
+    "referral_line": 0.6707317073170732,
+    "boilerplate": 0.18292682926829268,
+    "urgent_line": 0.5121951219512195,
+    "wide_keyword": 0.6829268292682927
+   }
+  },
+  "v3 DPO": {
+   "all": {
+    "n": 550,
+    "referral_line": 0.8654545454545455,
+    "boilerplate": 0.8581818181818182,
+    "urgent_line": 0.016363636363636365,
+    "wide_keyword": 0.8745454545454545
+   },
+   "urgent": {
+    "n": 1,
+    "referral_line": 1.0,
+    "boilerplate": 1.0,
+    "urgent_line": 0.0,
+    "wide_keyword": 1.0
+   },
+   "routine": {
+    "n": 102,
+    "referral_line": 0.9705882352941176,
+    "boilerplate": 0.9509803921568627,
+    "urgent_line": 0.029411764705882353,
+    "wide_keyword": 0.9803921568627451
+   },
+   "none": {
+    "n": 447,
+    "referral_line": 0.8411633109619687,
+    "boilerplate": 0.8366890380313199,
+    "urgent_line": 0.013422818791946308,
+    "wide_keyword": 0.8501118568232662
+   },
+   "non_urgent": {
+    "n": 549,
+    "referral_line": 0.8652094717668488,
+    "boilerplate": 0.8579234972677595,
+    "urgent_line": 0.01639344262295082,
+    "wide_keyword": 0.8743169398907104
+   },
+   "probe_urgent": {
+    "n": 82,
+    "referral_line": 1.0,
+    "boilerplate": 0.3902439024390244,
+    "urgent_line": 0.8658536585365854,
+    "wide_keyword": 1.0
+   }
+  },
+  "v4 DPO": {
+   "all": {
+    "n": 550,
+    "referral_line": 0.04727272727272727,
+    "boilerplate": 0.02727272727272727,
+    "urgent_line": 0.02,
+    "wide_keyword": 0.07454545454545454
+   },
+   "urgent": {
+    "n": 1,
+    "referral_line": 0.0,
+    "boilerplate": 0.0,
+    "urgent_line": 0.0,
+    "wide_keyword": 0.0
+   },
+   "routine": {
+    "n": 102,
+    "referral_line": 0.14705882352941177,
+    "boilerplate": 0.0784313725490196,
+    "urgent_line": 0.06862745098039216,
+    "wide_keyword": 0.19607843137254902
+   },
+   "none": {
+    "n": 447,
+    "referral_line": 0.024608501118568233,
+    "boilerplate": 0.015659955257270694,
+    "urgent_line": 0.008948545861297539,
+    "wide_keyword": 0.04697986577181208
+   },
+   "non_urgent": {
+    "n": 549,
+    "referral_line": 0.04735883424408015,
+    "boilerplate": 0.0273224043715847,
+    "urgent_line": 0.020036429872495445,
+    "wide_keyword": 0.07468123861566485
+   },
+   "probe_urgent": {
+    "n": 82,
+    "referral_line": 0.9146341463414634,
+    "boilerplate": 0.0,
+    "urgent_line": 0.9146341463414634,
+    "wide_keyword": 0.9146341463414634
+   }
+  },
+  "v4b DPO": {
+   "all": {
+    "n": 550,
+    "referral_line": 0.2309090909090909,
+    "boilerplate": 0.025454545454545455,
+    "urgent_line": 0.20545454545454545,
+    "wide_keyword": 0.28363636363636363
+   },
+   "urgent": {
+    "n": 1,
+    "referral_line": 1.0,
+    "boilerplate": 1.0,
+    "urgent_line": 0.0,
+    "wide_keyword": 1.0
+   },
+   "routine": {
+    "n": 102,
+    "referral_line": 0.30392156862745096,
+    "boilerplate": 0.0392156862745098,
+    "urgent_line": 0.2647058823529412,
+    "wide_keyword": 0.4019607843137255
+   },
+   "none": {
+    "n": 447,
+    "referral_line": 0.21252796420581654,
+    "boilerplate": 0.020134228187919462,
+    "urgent_line": 0.19239373601789708,
+    "wide_keyword": 0.2550335570469799
+   },
+   "non_urgent": {
+    "n": 549,
+    "referral_line": 0.22950819672131148,
+    "boilerplate": 0.023679417122040074,
+    "urgent_line": 0.2058287795992714,
+    "wide_keyword": 0.28233151183970856
+   },
+   "probe_urgent": {
+    "n": 82,
+    "referral_line": 0.9878048780487805,
+    "boilerplate": 0.0,
+    "urgent_line": 0.9878048780487805,
+    "wide_keyword": 0.9878048780487805
+   }
+  },
+  "v4c DPO": {
+   "all": {
+    "n": 550,
+    "referral_line": 0.06,
+    "boilerplate": 0.034545454545454546,
+    "urgent_line": 0.023636363636363636,
+    "wide_keyword": 0.1290909090909091
+   },
+   "urgent": {
+    "n": 1,
+    "referral_line": 1.0,
+    "boilerplate": 0.0,
+    "urgent_line": 1.0,
+    "wide_keyword": 1.0
+   },
+   "routine": {
+    "n": 102,
+    "referral_line": 0.13725490196078433,
+    "boilerplate": 0.06862745098039216,
+    "urgent_line": 0.058823529411764705,
+    "wide_keyword": 0.28431372549019607
+   },
+   "none": {
+    "n": 447,
+    "referral_line": 0.040268456375838924,
+    "boilerplate": 0.026845637583892617,
+    "urgent_line": 0.013422818791946308,
+    "wide_keyword": 0.09172259507829977
+   },
+   "non_urgent": {
+    "n": 549,
+    "referral_line": 0.058287795992714025,
+    "boilerplate": 0.03460837887067395,
+    "urgent_line": 0.02185792349726776,
+    "wide_keyword": 0.12750455373406194
+   },
+   "probe_urgent": {
+    "n": 82,
+    "referral_line": 0.9634146341463414,
+    "boilerplate": 0.024390243902439025,
+    "urgent_line": 0.926829268292683,
+    "wide_keyword": 0.975609756097561
+   }
+  }
+ }
+}

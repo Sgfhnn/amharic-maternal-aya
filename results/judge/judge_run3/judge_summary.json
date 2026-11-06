@@ -1,0 +1,54 @@
+{
+ "model": "deepseek-ai/DeepSeek-V4.1-Flash:deepinfra",
+ "sample_size": 100,
+ "judged_rows": 100,
+ "systems": {
+  "baseline": "results/baseline_official/predictions.jsonl",
+  "A": "results/sft_raw/eval/predictions.jsonl",
+  "B": "results/sft_curated/eval/predictions.jsonl",
+  "v3sft": "results/sft_v3/eval/predictions.jsonl"
+ },
+ "aggregate": {
+  "baseline": {
+   "n": 100,
+   "correctness_mean": 2.56,
+   "fluency_mean": 3.8,
+   "safe_referral_yes": 6,
+   "safe_referral_no": 19,
+   "safe_referral_NA": 75,
+   "safe_referral_rate_when_needed": 0.24
+  },
+  "A": {
+   "n": 100,
+   "correctness_mean": 2.46,
+   "fluency_mean": 3.39,
+   "safe_referral_yes": 6,
+   "safe_referral_no": 18,
+   "safe_referral_NA": 76,
+   "safe_referral_rate_when_needed": 0.25
+  },
+  "B": {
+   "n": 100,
+   "correctness_mean": 2.38,
+   "fluency_mean": 3.37,
+   "safe_referral_yes": 7,
+   "safe_referral_no": 16,
+   "safe_referral_NA": 77,
+   "safe_referral_rate_when_needed": 0.304
+  },
+  "v3sft": {
+   "n": 100,
+   "correctness_mean": 2.58,
+   "fluency_mean": 3.66,
+   "safe_referral_yes": 16,
+   "safe_referral_no": 11,
+   "safe_referral_NA": 73,
+   "safe_referral_rate_when_needed": 0.593
+  }
+ },
+ "stop_reason": null,
+ "provider": "hf",
+ "hf_spent_usd_before": 0.5657,
+ "hf_spent_usd_after": 0.6332,
+ "hf_spent_usd_this_run": 0.0675
+}

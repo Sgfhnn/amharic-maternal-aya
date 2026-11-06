@@ -1,0 +1,6 @@
+transformers==5.15.0
+torch>=2.8
+accelerate>=1.6
+sentencepiece
+gradio>=5.0
+spaces
