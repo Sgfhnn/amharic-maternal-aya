@@ -1,6 +1,6 @@
 ---
 title: "Teaching Tiny Aya when to say 'go now': Amharic maternal health Q&A with CuratorKIT, AlignTune and AuditKIT"
-thumbnail: # TODO before publishing
+thumbnail: https://raw.githubusercontent.com/Sgfhnn/amharic-maternal-aya/main/docs/thumbnail.png
 authors:
 - user: 5LeaderW
 ---
@@ -112,11 +112,34 @@ bias), in exchange for cutting false "go now" lines from 19.2% to 1.3% of factua
 on danger signs and the best Belebele score of any stage. For a health assistant, false alarms erode trust, so we took
 that trade.
 
-## Cost
+## Cost and return on investment
 
-All GPU work ran on free Kaggle T4 x2 in private kernels. LLM curation, triage labels, probe generation and judging
-used Hugging Face Inference Providers: about $1.03 billed (HF billing usage, 5-6 November 2026), plus about $0.20 of
-free promotional credit on another API for the run-2 checks and judge. No paid GPUs, no HF Jobs.
+**What it cost.** Training the submitted chain took 2.9 hours on free Kaggle T4 x2: run-2 SFT 5,666 s, v3 SFT 3,329 s, and v4c DPO 1,388 s. Counting every dead end, all nine training runs took 9.3 hours. Rented at Google Cloud's on-demand T4 price ($0.35 per GPU-hour), that would be roughly $3 to $7 (estimate); we paid $0. All the LLM work ran through Hugging Face Inference Providers, priced at $0.88 list and **billed at $1.03** (HF billing, 5-6 November 2026). That covered curation and rewrites ($0.56), triage labels ($0.02), and 624 judge calls ($0.31). About $0.20 of free promotional credit on another API paid for the run-2 checks. **Total cash: about $1.03.** No paid GPUs and no HF Jobs.
+
+**What we got for it** (base Tiny Aya Earth -> v4c, 550-question held-out test):
+
+| | Base | v4c | Change |
+|---|---|---|---|
+| Answers hitting the 256-token cap | 98.5% | 29.5% | -69 pts |
+| Markdown in the answer | 96.0% | 0.0% | -96 pts |
+| Mean answer length (Aya tokens) | 254.8 | 185.0 | -27% |
+| chrF++ test / Walelign SRH | 10.3 / 17.8 | 12.3 / 19.0 | +2.0 / +1.2 |
+| Referral on 82 held-out danger-sign questions | not run | 96.3% | |
+| False "go now" on factual questions | 0.4% | 1.3% | +0.9 pts |
+| Belebele / AfriMMLU Amharic | 61.7 / 46.4 | 63.6 / 44.4 | +1.9 / -2.0 |
+| Judge correctness / fluency, 1-5 (chained estimate) | ~2.6 / ~3.8 | ~3.0 / ~4.4 | about +0.4 / +0.6 |
+
+The judge rows are chained across four separate passes (base and v4c were never judged side by side), so read them as direction, not a precise gain.
+
+**What it costs to run.** The model has 3.35B parameters, about 6.7 GB in fp16, and fits on one 16 GB T4. On one T4 it produced 550 answers in 819 s, in batches of 16. That is 0.41 GPU-hours per 1,000 answers, or **about $0.15 per 1,000 answers** at $0.35 per hour (estimate, GPU only). The demo Space runs free on ZeroGPU. For comparison, calling a large hosted model, DeepSeek-V4.1-Flash through HF at the list price fitted from our own 660 logged calls ($0.20 / $0.60 per M tokens), would cost **about $0.13 to $0.19 per 1,000 answers** (estimate, at about 100 input and 185 output tokens). We never tested it as the Amharic responder, so this compares cost, not quality.
+
+**The honest reading.** Per answer, a small open model is not much cheaper than a cheap hosted flash model. Both cost a few cents per hundred users. The return is elsewhere:
+
+- About $1 and three free GPU hours turned a model that rambles in Markdown into one that stops, writes plain Amharic, and sends 96% of danger-sign questions to care, while flagging only 1.3% of factual questions as urgent.
+- The weights are open and run offline on one 16 GB GPU, with no per-call fee and no foreign API account. Sensitive reproductive-health questions stay on the operator's own hardware, which matters for clinics, NGOs, and app backends where bandwidth, cards, and data rules are real constraints.
+- The price: 2.0 points of AfriMMLU general knowledge, and 0.12 judge correctness compared with v4b. Answers are 27% shorter, but with fixed batches the wall time per answer did not fall (757 s base vs 819 s v4c), because a batch runs as long as its longest answer.
+
+The full table and derivations are in [`docs/roi.md`](https://github.com/Sgfhnn/amharic-maternal-aya/blob/main/docs/roi.md).
 
 ## What did not work, and what is left
 
